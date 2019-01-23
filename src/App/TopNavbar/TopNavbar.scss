@@ -1,0 +1,32 @@
+@mixin color{
+    color:white;
+}
+
+.top-navbar-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 75px;
+    background: #222f3e;
+    flex: 1 1 100%;
+    padding: 0 1.5em;
+    box-sizing: border-box;
+
+
+
+    .app-logo{
+        @include color;
+    }
+}
+
+// .top-navbar-container .navigation-links-container{
+//     display: flex;
+//     list-style: none;
+//     li{
+//         color: #8395a7;
+//         &:hover{
+//             cursor: pointer;
+//             color: white;
+//         }
+//     }
+// }

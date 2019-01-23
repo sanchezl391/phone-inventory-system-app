@@ -1,0 +1,38 @@
+$medColor: #8395a7;
+$lightColor: #c8d6e5;
+$darkColor: #222f3e;
+$hoverColor: #1e272e;
+
+.pages-container {
+    margin-top: 1em;
+    h2{
+        color: $medColor;
+        padding-left: 1em;
+    }
+    .navigation {
+        display: flex;
+        flex-direction: column;
+        list-style: none;
+        padding: 0;
+    }
+    .dropdown{justify-content: space-between;}
+
+}
+
+.pages-container .navigation li{
+    padding: .8em 1em;
+    color: $lightColor;
+    display: flex;
+    align-items: center;
+    &:hover{cursor: pointer; background: $hoverColor;}
+
+    .page-identifier i:first-child{
+        margin-right: 1em;
+    }
+
+    .fa-less-than {
+        display:flex;
+        align-self: flex-end;
+        justify-content: flex-end;
+    }
+}
