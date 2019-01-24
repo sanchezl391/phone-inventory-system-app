@@ -5,6 +5,7 @@ import Dropdown from './Dropdown/Dropdown'
 let FilterCategory = (props) => {
     const [isOpen, setIsOpen] = useState(false);
 
+
     let dropdownIconClassName = (isOpen) ? 'fas fa-less-than' : 'fas fa-chevron-up';
     let filterHeaderClassName = (isOpen) ? 'filter-category-header not-open' : 'filter-category-header is-open';
 
