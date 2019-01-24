@@ -1,5 +1,5 @@
 $dark-color: #222f3e;
-$light-color: #c8d6e5;
+$light-color: #808e9b;
 $red-color: #ff6b6b;
 
 .side-navbar-container {
@@ -9,8 +9,7 @@ $red-color: #ff6b6b;
 
     display: flex;
     flex-direction: column;
-    flex: 1 1 auto;
-    align-items: center;
+    height: 100vh;
     width: 22vw;
     background: $dark-color;
 }
@@ -41,12 +40,14 @@ $red-color: #ff6b6b;
     flex-direction: column;
     flex: 1 1 100%;
     width: 100%;
+    overflow:auto;
 
     .input-container{
         box-sizing: border-box;
         padding: .5em 1em;
 
         input{
+            color: $light-color;
             flex: 1;
             background: $dark-color;
             box-sizing: border-box;

@@ -1,0 +1,42 @@
+$lightColor: #808e9b;
+$hoverColor: #1e272e;
+
+.dropdown{
+    transition: transform .2s;
+}
+
+.hidden-dropdown{
+    overflow:hidden;
+    transform: scaleY(0);
+    transform-origin: top;
+}
+
+.visible-dropdown {
+    transform-origin: top;
+    transform: scaleY(1);
+}
+
+.drop-value {
+    display: flex;
+    align-items: center;
+    p{
+        padding-left: 25px;
+    }
+    &::before{
+        content: "";
+        position: relative;
+        display: flex;
+        left: -2px;
+        width: 15px;
+        height: 2px;
+        background: $lightColor;
+    }
+    border-left: 2px solid $lightColor;
+    padding: .1em;
+    margin-left: 1em;
+    color: $lightColor;
+    &:hover{
+        cursor:pointer;
+        background: $hoverColor;
+    }
+}

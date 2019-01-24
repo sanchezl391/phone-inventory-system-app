@@ -1,0 +1,23 @@
+$openColor: #222f3e;
+$bg-color: #1e272e;
+
+.filter-category-header {
+    display: flex;
+    justify-content: space-between;
+
+    .fa-less-than {
+        display:flex;
+        align-self: flex-end;
+        justify-content: flex-end;
+    }
+}
+
+.is-open{
+    background: $openColor;
+}
+.not-open{
+    background: $bg-color;
+}
+
+
+

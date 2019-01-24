@@ -6,12 +6,11 @@ let Pages = () => {
   <div className="pages-container">
     <h2 className="sm-txt">PAGES</h2>
     <ul className='navigation md-txt'>
-      <li className='dropdown'>
+      <li>
         <div className="page-identifier">
           <i className="fas fa-tachometer-alt"></i>
           Dashboard
-        </div>
-        <i className="fas fa-less-than"></i>     
+        </div>  
       </li>
       <li>
         <div className="page-identifier">
