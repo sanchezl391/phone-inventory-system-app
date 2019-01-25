@@ -1,9 +1,8 @@
 $lightColor: #808e9b;
-$hoverColor: #1e272e;
+$selectedColor: #2C3A47;
+$red-color: #ff6b6b;
 
-.is-selected{
-    background:#1e272e;
-}
+
 
 .drop-value {
     display: flex;
@@ -18,14 +17,25 @@ $hoverColor: #1e272e;
         left: -.8em;
         width: 15px;
         height: 2px;
-        background: $lightColor;
     }
-    border-left: 2px solid $lightColor;
     padding: .8em;
     margin-left: 1em;
     color: $lightColor;
     &:hover{
         cursor:pointer;
-        background: $hoverColor;
+        background: $selectedColor;
     }
+}
+.is-selected{
+    &::before{
+        background: $red-color;
+    }
+    border-left: 1px solid $red-color;
+    background: $selectedColor;
+}
+.not-selected {
+    &::before{
+        background: $lightColor;
+    }
+    border-left: 1px solid $lightColor;
 }
