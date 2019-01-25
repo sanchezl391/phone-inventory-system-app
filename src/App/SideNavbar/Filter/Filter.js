@@ -1,6 +1,8 @@
 import React from 'react';
 import './Filter.scss';
 import FilterCategory from './FilterCategory/FilterCategory';
+import brand from './brand.png';
+import condition from './condition.png';
 
 let Filter = () => {
   let html = 
@@ -9,11 +11,20 @@ let Filter = () => {
     <ul className='navigation md-txt'>
       <FilterCategory 
         category='Status' categoryIcon='fas fa-exclamation-circle'
-        dropdownValues={['Verizon', 'T-Mobile']}
+        dropdownValues={['Sold', 'Selling', 'Repair']}
       />
-      {/* <FilterCategory category='Company' categoryIcon='fas fa-building'/>
-      <FilterCategory category='Condition' categoryIcon='fas fa-mobile-alt'/>
-      <FilterCategory category='Price' categoryIcon='fas fa-dollar-sign'/> */}
+      <FilterCategory 
+        category='Company' categoryIcon='fas fa-building'
+        dropdownValues={['T-Mobile', 'Sprint', 'Verizon']}
+      />
+      <FilterCategory 
+        category='Condition' icon={condition}
+        dropdownValues={['A', 'B', 'C']}
+      />
+      <FilterCategory 
+        category='Brand' icon={brand}
+        dropdownValues={['Apple', 'LG', 'Samsung']}
+      />
     </ul>
   </div>;
   return html;    

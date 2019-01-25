@@ -4,6 +4,15 @@ $bg-color: #1e272e;
 .filter-category-header {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+
+
+
+    img{
+        width: 16px;
+        height: 16px;
+        margin-right: 16px;
+    }
 
     .fa-less-than {
         display:flex;

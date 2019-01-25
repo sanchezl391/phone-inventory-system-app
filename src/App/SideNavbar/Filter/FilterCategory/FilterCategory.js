@@ -4,7 +4,9 @@ import Dropdown from './Dropdown/Dropdown'
 
 let FilterCategory = (props) => {
     const [isOpen, setIsOpen] = useState(false);
-
+    let iconJsx = (props.categoryIcon) ? 
+        <i className={props.categoryIcon}></i>  : 
+        <img src={props.icon} alt="icon for category"/>;
 
     let dropdownIconClassName = (isOpen) ? 'fas fa-less-than' : 'fas fa-chevron-up';
     let filterHeaderClassName = (isOpen) ? 'filter-category-header not-open' : 'filter-category-header is-open';
@@ -13,10 +15,10 @@ let FilterCategory = (props) => {
     <div onClick={()=> setIsOpen(!isOpen)} className="filter-category-container">
         <li className={filterHeaderClassName}>
             <div className="page-identifier">
-            <i className={props.categoryIcon}></i>
+            {iconJsx} 
             {props.category}
             </div>
-            <i className={dropdownIconClassName}></i>   
+            <i className={dropdownIconClassName}></i>  
         </li>
         <Dropdown isOpen={isOpen} dropdownValues={props.dropdownValues}/>
     </div>;

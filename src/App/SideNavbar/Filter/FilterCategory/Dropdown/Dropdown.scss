@@ -3,6 +3,7 @@
 }
 
 .hidden-dropdown{
+    max-height: 0;
     overflow:hidden;
     transform: scaleY(0);
     transform-origin: top;
