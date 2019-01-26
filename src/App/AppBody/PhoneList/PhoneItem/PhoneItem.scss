@@ -1,0 +1,41 @@
+@mixin removeStyles{
+    margin: 0;
+    padding: 0;
+}   
+.phone-item-container{
+    border: 1.5px solid #ecf0f1;
+    padding: 1em;
+
+    p{
+        @include removeStyles;
+    }
+
+    &:hover{
+        background: #FFFFE0;
+        cursor:pointer;
+    }
+
+    @mixin rowStyles{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .top-row{@include rowStyles;}
+    .bottom-row{
+        margin-top: .3em;
+        display: flex;
+        .number{
+            color:white;
+            padding: 1px 5px;
+            border-radius:1em;
+        }
+        .almost-completed{
+            background: #55C9A6;
+        }    
+        .needs-work{
+            background: #EA7882;
+        }
+    }
+}
+
+

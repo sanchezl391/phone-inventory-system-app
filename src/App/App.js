@@ -7,8 +7,10 @@ import TopNavbar from './TopNavbar/TopNavbar';
 let App = () => {
   let html = <div className='app-container'>
       <SideNavbar />
-      <TopNavbar />
-      <AppBody />
+      <div className="main-content-container">
+        <TopNavbar />
+        <AppBody />
+      </div>
   </div>;
   return html;
 };
