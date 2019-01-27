@@ -3,6 +3,7 @@
     padding: 0;
 }   
 .phone-item-container{
+    display: flex;
     border: 1.5px solid #ecf0f1;
     padding: 1em;
 
@@ -15,10 +16,33 @@
         cursor:pointer;
     }
 
-    @mixin rowStyles{
-        display: flex;
-        justify-content: space-between;
+    .checkbox{
+        border-radius:10%;
+        width: 20px;
+        height: 20px;
+        border: 1px solid #ecf0f1;
+        margin-right: 1em;
+        &:hover{
+            cursor: pointer; 
+            background: #ecf0f1;
+        }
     }
+
+
+
+
+
+}
+
+@mixin rowStyles{
+    display: flex;
+    justify-content: space-between;
+}
+
+.phone-info-container{
+    flex: 1 1 100%;
+    @include rowStyles();
+    flex-direction: column;
 
     .top-row{@include rowStyles;}
     .bottom-row{
@@ -37,5 +61,4 @@
         }
     }
 }
-
 

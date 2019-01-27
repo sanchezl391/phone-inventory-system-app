@@ -2,7 +2,27 @@
     margin: 0;
     padding: 0;
 }   
-.phone-list-container ul{
-    list-style: none; 
-    @include removeStyles;
+
+.phone-list-container{
+    .controls-container{
+        margin-bottom: 1em;
+        i{
+            padding: 5px 15px;
+            border-radius: 40%;
+            border: 1.5px solid #ecf0f1;
+            color: #808e9b;
+
+            &:hover{
+                background: #E27C79;
+                cursor:pointer;
+                color: white;
+                border-color: #E27C79;
+            }
+        }
+    }    
+
+    ul{
+        list-style: none; 
+        @include removeStyles;
+    }
 }
