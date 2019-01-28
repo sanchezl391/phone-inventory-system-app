@@ -1,0 +1,30 @@
+.checkbox-container{
+    border-radius:10%;
+    width: 20px;
+    height: 20px;
+    border: 1px solid #ecf0f1;
+    margin-right: 1em;
+    &:hover{
+        cursor: pointer; 
+        background: #ecf0f1;
+    }
+}
+
+$openColor: #222f3e;
+$bg-color: #1e272e;
+
+.checked{
+    &:hover{
+        background: #222f3e;
+    }
+    background: #222f3e;
+    border-radius: 10%;
+    border: 1px solid #222f3e;
+
+    .fa-check{
+        display: flex;
+        justify-content: center;
+        padding-top: 2px;
+        color:white;
+    }
+}

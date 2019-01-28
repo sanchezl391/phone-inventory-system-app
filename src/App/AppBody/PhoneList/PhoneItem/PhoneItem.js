@@ -1,10 +1,11 @@
 import React from 'react';
 import './PhoneItem.scss';
 import '../PhoneList.scss';
+import Checkbox from './Checkbox/Checkbox' ;
 
 let PhoneItem = () => {
     let html = <li className='phone-item-container'>
-        <div className="checkbox"></div>
+        <Checkbox />
         <div className="phone-info-container">
             <div className="md-txt top-row">
                 <p>T-Mobile Galaxy S8</p>
