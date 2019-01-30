@@ -58,7 +58,8 @@ let PhoneList = (props) => {
 
     let html = <div className="phone-list-container">
         <div className="controls-container">
-            <i onClick={ () => deletePhones() } className="md-txt far fa-trash-alt"></i>
+            <i className="far fa-edit"></i>
+            <i onClick={ () => deletePhones() } className="md-txt far fa-trash-alt"></i>            
         </div>
         <ul>
             {generatePhoneItemJsx()}

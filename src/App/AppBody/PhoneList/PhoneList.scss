@@ -6,17 +6,39 @@
 .phone-list-container{
     .controls-container{
         margin-bottom: 1em;
-        i{
+        @mixin button{
+            box-sizing: border-box;
             padding: 5px 15px;
             border-radius: 40%;
+            &:hover{
+                cursor:pointer;
+            }
+        }
+
+        i.fa-trash-alt{
+            @include button;
             border: 1.5px solid #ecf0f1;
+            border-bottom-left-radius: 0; 
+            border-top-left-radius: 0;
             color: #808e9b;
 
             &:hover{
                 background: #E27C79;
-                cursor:pointer;
                 color: white;
                 border-color: #E27C79;
+            }
+        }
+
+        i.fa-edit{
+            @include button;
+            color:white;
+            background: #79B0EC;
+            border: 1.5px solid #79B0EC;
+            border-bottom-right-radius: 0; 
+            border-top-right-radius: 0;
+
+            &:hover{
+                background:#A6CAF2;
             }
         }
     }    
