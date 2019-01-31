@@ -13,22 +13,8 @@
         background-color: #DDD;
         width: 1px;
     }
-    .isCritical{
-        color: #DF2150;
-    }
 }
 .row:nth-child(even){
     background: #F9F9F9;
 }
 
-.add-phone-dialog-container > .form > .row > .valueContainer{
-    flex: 1;
-    display: flex;
-    padding: .1em 1em;
-    .value{
-        border-bottom: 1px dashed #0088CC;
-        &:hover{
-            cursor: pointer;
-        }
-    }
-}

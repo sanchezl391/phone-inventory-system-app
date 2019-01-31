@@ -1,0 +1,15 @@
+.isCritical{
+    color: #DF2150;
+}
+
+.add-phone-dialog-container > .form > .row > .valueContainer{
+    flex: 1;
+    display: flex;
+    padding: .1em 1em;
+    .value{
+        border-bottom: 1px dashed #0088CC;
+        &:hover{
+            cursor: pointer;
+        }
+    }
+}

@@ -6,7 +6,7 @@ import TopNavbar from './TopNavbar/TopNavbar';
 
 let phone1 = {
   status: 'Sale',
-  id: false, 
+  id: 1, 
   model: 'V20',
   brand: 'LG',
   company: 'T-Mobile',
