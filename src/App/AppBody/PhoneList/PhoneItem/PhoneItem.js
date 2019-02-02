@@ -5,7 +5,6 @@ import Checkbox from './Checkbox/Checkbox' ;
 import PhoneDialog from '../../PhoneDialog/PhoneDialog';
 
 let PhoneItem = (props) => {
-    console.log(props.id);
     let phone = props.phone;
 
     let brand = phone.brand;
