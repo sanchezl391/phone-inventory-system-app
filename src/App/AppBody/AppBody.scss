@@ -1,11 +1,16 @@
 .app-body-container{
     background: #ecf0f1;
-    flex:1;
+    display: flex;
+    height: auto;
+
     .app-body-content-container{
         margin: 1em;
         background: white;
         border-radius: 6px;
         padding: 1em;
+        display: flex;
+        height: auto;
+        overflow: auto;
     }
 }
 
