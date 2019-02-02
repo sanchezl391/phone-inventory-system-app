@@ -1,13 +1,14 @@
-import React from 'react';
+import React,{useState} from 'react';
 import './AppBody.scss';
 import PhoneDialog from './PhoneDialog/PhoneDialog';
-// import PhoneList from './PhoneList/PhoneList';
+import PhoneList from './PhoneList/PhoneList';
 
 let AppBody = (props) => {
+  let [bodyContent, setBodyContent] = useState();
+
   let html = <section className='app-body-container'>
     <div className="app-body-content-container">
-      {/* <PhoneList phoneManager={props.phoneManager}/> */}
-      <PhoneDialog phone={props.phoneManager.phones[1]}/>
+      {bodyContent || <PhoneList setBodyContent={setBodyContent} phoneManager={props.phoneManager}/>}
     </div>
   </section>;
   return html;

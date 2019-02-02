@@ -5,8 +5,6 @@ let PhoneList = (props) => {
     let [phones, setPhones] = useState(props.phoneManager.phones);
     let [checkedPhoneIds, setCheckedPhoneIds] = useState([]);
 
-    console.log(checkedPhoneIds);
-
     let notifyCheckChange = (isChecked, id) => {
         let copyOfPhoneIds = checkedPhoneIds.slice();
         if(isChecked){
@@ -46,6 +44,7 @@ let PhoneList = (props) => {
 
             jsx.push( 
                 <PhoneItem 
+                    setBodyContent={props.setBodyContent}
                     id={id}
                     key={id}
                     phone={phone}
@@ -59,7 +58,9 @@ let PhoneList = (props) => {
     let html = <div className="phone-list-container">
         <div className="controls-container">
             <i className="far fa-edit"></i>
-            <i onClick={ () => deletePhones() } className="md-txt far fa-trash-alt"></i>            
+            <i 
+                onClick={ () => deletePhones() } 
+                className="md-txt far fa-trash-alt"></i>            
         </div>
         <ul>
             {generatePhoneItemJsx()}

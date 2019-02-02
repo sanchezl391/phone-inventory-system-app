@@ -7,10 +7,20 @@ let Input = (props) => {
     setValue(e.target.value);
   };
   let handleSaveBtnClicked = () => {
+    let phones = props.phoneManager.phones;
+    let setPhones = props.phoneManager.setPhones;
+
+    let phone = props.phone;
+    phone[props.name] = value;
+
+    phones[props.id] = phone;
+    console.log(props.id);
+    console.log(phones);
+    setPhones(phones);
+
     props.setDisplayVal(value);
-    props.handleCloseBtnClicked();
+    props.handleCloseBtnClicked();  
   };
-  console.log('inside Input', value);
 
   let html = <div className="input-container">
         <p>Enter {props.name}</p>

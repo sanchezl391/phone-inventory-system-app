@@ -23,7 +23,16 @@ let Value = (props) => {
     setInputJsx('');
   };
   let handleClick = () => {
-    setInputJsx(<Input setDisplayVal={setDisplayVal} displayVal={displayVal} handleCloseBtnClicked={handleCloseBtnClicked} name={props.name}/>);
+    setInputJsx(
+      <Input 
+        id={props.id}
+        phoneManager={props.phoneManager}
+        setDisplayVal={setDisplayVal} 
+        displayVal={displayVal} 
+        handleCloseBtnClicked={handleCloseBtnClicked} 
+        name={props.name}
+        phone={props.phone}/>
+    );
   };
 
   if(isEmpty){

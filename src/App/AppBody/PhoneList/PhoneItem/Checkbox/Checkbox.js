@@ -6,7 +6,8 @@ let Checkbox = (props) => {
     let innerHtml = '';
     let checkboxClassName = '';
 
-    let toggleCheck = () =>{
+    let toggleCheck = (e) =>{
+        e.stopPropagation();
         setIsChecked(!isChecked);
         props.notifyCheckChange(!isChecked, props.id);
     };
@@ -18,7 +19,7 @@ let Checkbox = (props) => {
         checkboxClassName = 'checkbox-container';
     }
 
-    let html = <div onClick={() => toggleCheck()} className={checkboxClassName}>
+    let html = <div onClick={(e) => toggleCheck(e)} className={checkboxClassName}>
         {innerHtml}
     </div>;
 

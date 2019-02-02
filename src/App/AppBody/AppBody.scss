@@ -1,7 +1,7 @@
 .app-body-container{
     background: #ecf0f1;
     display: flex;
-    height: auto;
+    height: 100%;
 
     .app-body-content-container{
         margin: 1em;
@@ -9,8 +9,9 @@
         border-radius: 6px;
         padding: 1em;
         display: flex;
-        height: auto;
+        height: 100%;
         overflow: auto;
+        width: 100%;
     }
 }
 
