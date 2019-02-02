@@ -12,31 +12,32 @@ let criticalPhoneKeys = [
     'model'
   ];
 
-
-// render Input only when value was clicked
 let Value = (props) => {
-    let handleClick = () => {
-        setInputJsx(<Input name={props.name}/>);
-    };
+  let [displayVal, setDisplayVal] = useState(props.value);
+  let [inputJsx, setInputJsx] = useState('');
+  let isEmpty = !((displayVal + '').length > 0); 
+  let isCritical = criticalPhoneKeys.includes(props.name);
+  let valueClassName = 'value ';
 
-    let [value, setValue] = useState(props.value);
-    let [inputJsx, setInputJsx] = useState('');
-    let isEmpty = !((props.value + '').length > 0); 
-    let isCritical = criticalPhoneKeys.includes(props.name);
-    let valueClassName = 'value ';
+  let handleCloseBtnClicked = () => {
+    setInputJsx('');
+  };
+  let handleClick = () => {
+    setInputJsx(<Input setDisplayVal={setDisplayVal} displayVal={displayVal} handleCloseBtnClicked={handleCloseBtnClicked} name={props.name}/>);
+  };
 
-    if(isEmpty){
-      valueClassName += ' empty';
-      value = 'Empty';
-    } 
-    if(isCritical) valueClassName += ' isCritical';
+  if(isEmpty){
+    valueClassName += ' empty';
+    setDisplayVal('Empty');
+  } 
+  if(isCritical) valueClassName += ' isCritical';
 
   let html = <div className="valueContainer">
         {inputJsx}
         <p 
             onClick={() => handleClick()}
             className={valueClassName}>
-            {value + ''}
+            {displayVal + ''}
         </p>
     </div>;
   return html;
