@@ -16,7 +16,7 @@ let criticalPhoneKeys = [
 // render Input only when value was clicked
 let Value = (props) => {
     let handleClick = () => {
-        setInputJsx(<Input />);
+        setInputJsx(<Input name={props.name}/>);
     };
 
     let [value, setValue] = useState(props.value);
