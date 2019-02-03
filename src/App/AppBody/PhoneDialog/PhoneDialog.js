@@ -32,11 +32,22 @@ let PhoneDialog = (props) => {
       let key = phoneKeys[i];
       phone[key] = '';
     }
+
+    let today = new Date();
+    let day = today.getDate();
+    day =  (day < 10) ? day = '0' + day : '' + day;
+
+    let year = today.getFullYear();
+
+    let month = today.getMonth() + 1;
+    month =  (month < 10) ? month = '0' + month : '' + month;
+
+    phone['dateAdded'] = `${month}/${day}/${year}`;
     let phoneManager = props.phoneManager;
     let phones = phoneManager.phones;
     let idCount = Object.keys(phones).length + 1;
     id = idCount;  
-    console.log(phones);
+
     phones[idCount] = phone;
     phoneManager.setPhones(phones);
   };
