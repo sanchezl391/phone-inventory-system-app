@@ -1,7 +1,8 @@
 import React from 'react';
 import './Pages.scss';
+import Inbox from '../Pages/Inbox/Inbox'
 
-let Pages = () => {
+let Pages = (props) => {
   let html = 
   <div className="pages-container">
     <h2 className="sm-txt">PAGES</h2>
@@ -12,7 +13,9 @@ let Pages = () => {
           Dashboard
         </div>  
       </li>
-      <li>
+      <li onClick={()=>props.setBodyContent(
+          <Inbox phoneManager={props.phoneManager} setBodyContent={props.setBodyContent}/>)
+          } >
         <div className="page-identifier">
           <i className="fas fa-inbox"></i>
           Inbox

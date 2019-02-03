@@ -1,14 +1,15 @@
-import React,{useState} from 'react';
+import React from 'react';
 import './AppBody.scss';
-import PhoneDialog from './PhoneDialog/PhoneDialog';
+
 import PhoneList from './PhoneList/PhoneList';
 
 let AppBody = (props) => {
-  let [bodyContent, setBodyContent] = useState();
 
+  console.log(props);
   let html = <section className='app-body-container'>
     <div className="app-body-content-container">
-      {bodyContent || <PhoneList setBodyContent={setBodyContent} phoneManager={props.phoneManager}/>}
+      {/* {props.bodyContent || <PhoneList setBodyContent={props.setBodyContent} phoneManager={props.phoneManager}/>} */}
+      {props.bodyContent}
     </div>
   </section>;
   return html;

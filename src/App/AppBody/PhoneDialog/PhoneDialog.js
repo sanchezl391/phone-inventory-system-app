@@ -82,7 +82,7 @@ let PhoneDialog = (props) => {
       )}
       className="fas fa-arrow-left lg-txt"></i>
     <div className="header">
-        <h2>Header Depends on wether adding or not</h2>
+        <h2>{props.header}</h2>
     </div>
     <div className="form sm-txt">
         {generateJsx()}

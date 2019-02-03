@@ -44,6 +44,7 @@ let PhoneList = (props) => {
     };
 
     let generatePhoneItemJsx = () => {
+        let phones = (props.inboxPhones) ? props.inboxPhones : props.phoneManager.phones;
         let jsx = [];
         for(let id in phones){
             let phone = phones[id];

@@ -64,13 +64,15 @@ let phone3 = {
 
 let App = () => {
   let [phones, setPhones] = useState({1: phone1, 2: phone2, 3: phone3});
+  let [bodyContent, setBodyContent] = useState();
   let phoneManager = {phones: phones, setPhones: setPhones};
+  console.log('change in app');
 
   let html = <div className='app-container'>
-      <SideNavbar />
+      <SideNavbar phoneManager={phoneManager} bodyContent={bodyContent} setBodyContent={setBodyContent}/>
       <div className="main-content-container">
         <TopNavbar />
-        <AppBody phoneManager={phoneManager}/>
+        <AppBody bodyContent={bodyContent} setBodyContent={setBodyContent} phoneManager={phoneManager}/>
       </div>
   </div>;
   return html;
