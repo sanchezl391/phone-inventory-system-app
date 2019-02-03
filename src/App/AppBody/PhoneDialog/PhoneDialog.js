@@ -3,32 +3,12 @@ import Row from './Row/Row';
 import './PhoneDialog.scss';
 import PhoneList from '../PhoneList/PhoneList';
 
-let phoneKeys = [
-  'status',
-  'id', 
-  'model',
-  'brand',
-  'company', 
-  'color', 
-  'condition',
-  'comments',
-  'dateAdded',
-  'datePurchased',
-  'dateSold',
-  'dateReturned',
-  'customerName', 
-  'imei', 
-  'originalPrice', 
-  'goalPrice', 
-  'priceSold'
-];
-
-let AddPhoneDialog = (props) => {
+let PhoneDialog = (props) => {
   let phone = props.phone;
 
   let generateJsx = () => {
     let jsx = [];
-    phoneKeys.forEach((key) => {
+    props.phoneKeys.forEach((key) => {
       jsx.push(
         <Row
           phone={phone}
@@ -62,4 +42,4 @@ let AddPhoneDialog = (props) => {
   return html;
 };
 
-export default AddPhoneDialog;
+export default PhoneDialog;

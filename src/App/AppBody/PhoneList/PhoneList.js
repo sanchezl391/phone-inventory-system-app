@@ -17,9 +17,6 @@ let PhoneList = (props) => {
     };
 
     let deletePhones = () => {
-        console.log('attempting to delete phones');
-        console.log(phones, checkedPhoneIds);
-        console.log(checkedPhoneIds);
         for(let i in checkedPhoneIds) {
             console.log('i', i);
             for(let id in phones) {
@@ -33,8 +30,6 @@ let PhoneList = (props) => {
                 }
             }
         }
-        console.log('after deletion');
-        console.log(phones, checkedPhoneIds);
     };
 
     let generatePhoneItemJsx = () => {
