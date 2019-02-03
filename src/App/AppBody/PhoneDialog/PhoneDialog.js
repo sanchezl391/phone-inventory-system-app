@@ -3,12 +3,48 @@ import Row from './Row/Row';
 import './PhoneDialog.scss';
 import PhoneList from '../PhoneList/PhoneList';
 
+let phoneKeys = [
+  'status',
+  'id', 
+  'model',
+  'brand',
+  'company', 
+  'color', 
+  'condition',
+  'comments',
+  'dateAdded',
+  'datePurchased',
+  'dateSold',
+  'dateReturned',
+  'customerName', 
+  'imei', 
+  'originalPrice', 
+  'goalPrice', 
+  'priceSold'
+];
+
 let PhoneDialog = (props) => {
+  let id;
   let phone = props.phone;
+  let createNewPhone = () => {
+    phone = {};
+    for(let i in phoneKeys){
+      let key = phoneKeys[i];
+      phone[key] = '';
+    }
+    let phoneManager = props.phoneManager;
+    let phones = phoneManager.phones;
+    let idCount = Object.keys(phones).length + 1; 
+    phones[idCount] = phone;
+    phoneManager.setPhones(phones);
+  };
+  
+  if(!props.id) createNewPhone();
+  
 
   let generateJsx = () => {
     let jsx = [];
-    props.phoneKeys.forEach((key) => {
+    phoneKeys.forEach((key) => {
       jsx.push(
         <Row
           phone={phone}
@@ -16,7 +52,7 @@ let PhoneDialog = (props) => {
           key={key}
           name={key}
           value={phone[key]}
-          id={props.id}
+          id={props.id || id}
         />
       );
     });

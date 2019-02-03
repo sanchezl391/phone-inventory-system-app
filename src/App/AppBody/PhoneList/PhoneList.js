@@ -1,9 +1,19 @@
 import React, {useState} from 'react';
 import PhoneItem from './PhoneItem/PhoneItem';
+import PhoneDialog from '../PhoneDialog/PhoneDialog'
 
 let PhoneList = (props) => {
     let [phones, setPhones] = useState(props.phoneManager.phones);
     let [checkedPhoneIds, setCheckedPhoneIds] = useState([]);
+
+    let handleAddPhoneBtnClicked = () => {
+        props.setBodyContent(
+            <PhoneDialog 
+                phoneManager={props.phoneManager}
+                setBodyContent={props.setBodyContent}                 
+        />
+        );
+    };
 
     let notifyCheckChange = (isChecked, id) => {
         let copyOfPhoneIds = checkedPhoneIds.slice();
@@ -52,7 +62,9 @@ let PhoneList = (props) => {
 
     let html = <div className="phone-list-container">
         <div className="controls-container">
-            <i className="far fa-edit"></i>
+            <i 
+                onClick={() => handleAddPhoneBtnClicked()}
+                className="far fa-edit"></i>
             <i 
                 onClick={ () => deletePhones() } 
                 className="md-txt far fa-trash-alt"></i>            
