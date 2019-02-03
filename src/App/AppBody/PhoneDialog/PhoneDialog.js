@@ -34,12 +34,14 @@ let PhoneDialog = (props) => {
     }
     let phoneManager = props.phoneManager;
     let phones = phoneManager.phones;
-    let idCount = Object.keys(phones).length + 1; 
+    let idCount = Object.keys(phones).length + 1;
+    id = idCount;  
+    console.log(phones);
     phones[idCount] = phone;
     phoneManager.setPhones(phones);
   };
   
-  if(!props.id) createNewPhone();
+  if(props.isCreatingNewPhone) createNewPhone();
   
 
   let generateJsx = () => {

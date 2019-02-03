@@ -9,6 +9,7 @@ let PhoneList = (props) => {
     let handleAddPhoneBtnClicked = () => {
         props.setBodyContent(
             <PhoneDialog 
+                isCreatingNewPhone={true}
                 phoneManager={props.phoneManager}
                 setBodyContent={props.setBodyContent}                 
         />
