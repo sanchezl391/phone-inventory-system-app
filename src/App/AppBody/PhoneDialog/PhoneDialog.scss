@@ -1,6 +1,7 @@
-.add-phone-dialog-container{
+.phone-dialog-container{
     display: flex;
     flex-direction: column;
+    flex: 1 1 100%;
 
     @mixin button{
         box-sizing: border-box;
@@ -22,9 +23,7 @@
         color:white;
     }
 }
-
-
-.add-phone-dialog-container > .form{
+.phone-dialog-container > .form{
     padding: 1em;
 }
 

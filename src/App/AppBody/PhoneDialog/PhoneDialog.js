@@ -61,7 +61,7 @@ let PhoneDialog = (props) => {
     return jsx;
   };
 
-  let html = <div className="add-phone-dialog-container">
+  let html = <div className="phone-dialog-container">
     <i 
       onClick={() => props.setBodyContent(
         <PhoneList 

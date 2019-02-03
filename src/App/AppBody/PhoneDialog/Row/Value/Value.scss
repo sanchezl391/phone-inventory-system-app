@@ -2,11 +2,13 @@
     color: #DF2150;
 }
 
-.add-phone-dialog-container > .form > .row > .valueContainer{
+.valueContainer{
     position: relative;
-    flex: 1;
     display: flex;
+    flex: 1 1 50%;
+    border-left: 1px solid #DDDDDD;
     padding: .1em 1em;
+
     .value{
         border-bottom: 1px dashed #0088CC;
         &:hover{

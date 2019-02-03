@@ -5,7 +5,7 @@ import Value from './Value/Value';
 let Row = (props) => {
   let html = <div className="row">
         <p className='name'>{props.name}</p>
-        <div className="divider"></div>
+        {/* <div className="divider"></div> */}
         <Value 
           phoneManager={props.phoneManager}
           id={props.id} 
