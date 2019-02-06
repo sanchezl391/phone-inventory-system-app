@@ -8,7 +8,6 @@ let AppBody = (props) => {
   console.log(props);
   let html = <section className='app-body-container'>
     <div className="app-body-content-container">
-      {/* {props.bodyContent || <PhoneList setBodyContent={props.setBodyContent} phoneManager={props.phoneManager}/>} */}
       {props.bodyContent}
     </div>
   </section>;

@@ -19,7 +19,9 @@ let SideNavbar = (props) => {
       <div className="input-container">
         <input className='sm-txt' placeholder="Phone Search..." type="text"/>
       </div>
-      <Pages phoneManager={props.phoneManager} setBodyContent={props.setBodyContent}/>
+      <Pages 
+        phoneManager={props.phoneManager} 
+        setBodyContent={props.setBodyContent}/>
       <Filter/> 
     </div>
   </nav>;
