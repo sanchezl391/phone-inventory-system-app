@@ -3,7 +3,6 @@ import './SideNavbar.scss';
 import userImage from './user.jpg'
 import Filter from './Filter/Filter';
 import Pages from './Pages/Pages';
-import Inbox from './Pages/Inbox/Inbox';
 
 let SideNavbar = (props) => {
   let [pageActivated, setPageActivated] = useState();

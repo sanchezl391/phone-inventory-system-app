@@ -2,7 +2,7 @@ import React from 'react';
 import './PhoneItem.scss';
 import '../PhoneList.scss';
 import Checkbox from './Checkbox/Checkbox' ;
-import PhoneDialog from '../../PhoneDialog/PhoneDialog';
+import PhoneDialog from './PhoneDialog/PhoneDialog';
 
 let PhoneItem = (props) => {
     let phone = props.phone;

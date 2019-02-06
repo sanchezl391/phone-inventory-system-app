@@ -72,8 +72,8 @@ let App = () => {
   let html = <div className='app-container'>
       <SideNavbar phoneManager={phoneManager} bodyContent={bodyContent} setBodyContent={setBodyContent}/>
       <div className="main-content-container">
-        <TopNavbar />
-        <AppBody bodyContent={bodyContent} setBodyContent={setBodyContent} phoneManager={phoneManager}/>
+        {/* <TopNavbar /> */}
+        {/* <AppBody bodyContent={bodyContent} setBodyContent={setBodyContent} phoneManager={phoneManager}/> */}
       </div>
   </div>;
   return html;

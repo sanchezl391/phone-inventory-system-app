@@ -1,7 +1,6 @@
 import React from 'react';
 import Row from './Row/Row';
 import './PhoneDialog.scss';
-import PhoneList from '../PhoneList/PhoneList';
 
 let phoneKeys = [
   'status',
@@ -74,12 +73,12 @@ let PhoneDialog = (props) => {
 
   let html = <div className="phone-dialog-container">
     <i 
-      onClick={() => props.setBodyContent(
-        <PhoneList 
-          setBodyContent={props.setBodyContent} 
-          phoneManager={props.phoneManager}
-        />
-      )}
+      // onClick={() => props.setBodyContent(
+      //   <PhoneList 
+      //     setBodyContent={props.setBodyContent} 
+      //     phoneManager={props.phoneManager}
+      //   />
+      // )}
       className="fas fa-arrow-left lg-txt"></i>
     <div className="header">
         <h2>{props.header}</h2>

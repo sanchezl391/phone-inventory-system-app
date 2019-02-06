@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import PhoneItem from './PhoneItem/PhoneItem';
-import PhoneDialog from '../PhoneDialog/PhoneDialog'
+import PhoneDialog from './PhoneItem/PhoneDialog/PhoneDialog'
 
 let PhoneList = (props) => {
     let [phones, setPhones] = useState(props.phoneManager.phones);
