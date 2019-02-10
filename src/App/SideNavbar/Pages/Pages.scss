@@ -1,7 +1,8 @@
 $medColor: #8395a7;
-$lightColor: #808e9b;
+$lightColor: #bdc3c7;
 $darkColor: #222f3e;
 $hoverColor: #1e272e;
+$red-color: #ff6b6b;
 
 .pages-container {
     margin-top: 1em;
@@ -19,6 +20,8 @@ $hoverColor: #1e272e;
 
 }
 
+
+
 .pages-container .navigation li{
     padding: .8em 1em;
     color: $lightColor;
@@ -29,5 +32,5 @@ $hoverColor: #1e272e;
     .page-identifier i:first-child{
         margin-right: 1em;
     }
-
 }
+.pages-container .navigation .active-section{color: $red-color;}

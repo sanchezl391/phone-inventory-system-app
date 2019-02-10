@@ -64,16 +64,17 @@ let phone3 = {
 
 let App = () => {
   let [phones, setPhones] = useState({1: phone1, 2: phone2, 3: phone3});
-  let [bodyContent, setBodyContent] = useState();
+  let [currentActiveSection, setCurrentActiveSection] = useState('inbox');
+  let sectionManager = {currentActiveSection: currentActiveSection, setCurrentActiveSection:setCurrentActiveSection};
+  console.log(currentActiveSection);
   
   let phoneManager = {phones: phones, setPhones: setPhones};
 
-
   let html = <div className='app-container'>
-      <SideNavbar phoneManager={phoneManager} bodyContent={bodyContent} setBodyContent={setBodyContent}/>
+      <SideNavbar phoneManager={phoneManager} sectionManager={sectionManager}/>
       <div className="main-content-container">
         {/* <TopNavbar /> */}
-        {/* <AppBody bodyContent={bodyContent} setBodyContent={setBodyContent} phoneManager={phoneManager}/> */}
+        {/* <AppBody phoneManager={phoneManager}/> */}
       </div>
   </div>;
   return html;

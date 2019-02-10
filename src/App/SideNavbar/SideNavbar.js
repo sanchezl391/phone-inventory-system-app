@@ -5,7 +5,9 @@ import Filter from './Filter/Filter';
 import Pages from './Pages/Pages';
 
 let SideNavbar = (props) => {
-  let [pageActivated, setPageActivated] = useState();
+  let showPhonesContainerClassName = 
+    (props.sectionManager.currentActiveSection === 'all phones') ? 
+      'show-phones-container active-section' : 'show-phones-container' ;
 
   let html = <nav className='side-navbar-container'>
     <header>
@@ -20,12 +22,15 @@ let SideNavbar = (props) => {
       </div>
       <Pages 
         phoneManager={props.phoneManager} 
-        setBodyContent={props.setBodyContent}/>
+        sectionManager={props.sectionManager}/>
+        <div className={showPhonesContainerClassName} 
+          onClick={()=>props.sectionManager.setCurrentActiveSection('all phones')}>
+          <i className="fas fa-list-ul"></i>Show Phones
+        </div>
       <Filter/> 
     </div>
   </nav>;
   return html;    
 };
-
 
 export default SideNavbar;

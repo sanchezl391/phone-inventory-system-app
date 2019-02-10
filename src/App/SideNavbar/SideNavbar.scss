@@ -1,6 +1,7 @@
 $dark-color: #222f3e;
-$light-color: #808e9b;
+$light-color: #bdc3c7;
 $red-color: #ff6b6b;
+$hover-color: #1e272e;
 
 .side-navbar-container {
     header{
@@ -33,6 +34,21 @@ $red-color: #ff6b6b;
         color: white;
     }
 }
+
+
+
+.show-phones-container{
+    margin-top: 3em;
+    display: flex; 
+    i {margin-right: 1em;}
+    
+    padding: .8em 1em;
+    color: $light-color;
+    align-items: center;
+    &:hover{cursor: pointer; background: $hover-color;}    
+}
+
+.active-section{color: $red-color;}
 
 .side-navbar-body{
     box-sizing: border-box;
