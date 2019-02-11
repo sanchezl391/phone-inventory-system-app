@@ -1,8 +1,10 @@
 import React, {useState} from 'react';
 import './App.scss';
 import SideNavbar from './SideNavbar/SideNavbar';
-import AppBody from './AppBody/AppBody';
 import TopNavbar from './TopNavbar/TopNavbar';
+import Inbox from './Inbox/Inbox';
+import Dashboard from './Dashboard/Dashboard';
+import AllPhones from './AllPhones/AllPhones';
 
 let phone1 = {
   status: 'Sale',
@@ -62,19 +64,39 @@ let phone3 = {
   priceSold: 200
 };
 
+ 
+
 let App = () => {
   let [phones, setPhones] = useState({1: phone1, 2: phone2, 3: phone3});
   let [currentActiveSection, setCurrentActiveSection] = useState('inbox');
   let sectionManager = {currentActiveSection: currentActiveSection, setCurrentActiveSection:setCurrentActiveSection};
   console.log(currentActiveSection);
-  
+  let bodyContent = (() => {
+    let content;
+    switch(currentActiveSection){
+      case 'inbox':
+        content = <Inbox/>;
+        break;
+      case 'dashboard':
+        content = <Dashboard/>;
+        break;
+      case 'all phones':
+        content = <AllPhones/>;
+        break;
+      default:
+        content = <AllPhones/>;
+        break;
+    }
+    return content;
+  })();
+
   let phoneManager = {phones: phones, setPhones: setPhones};
 
   let html = <div className='app-container'>
       <SideNavbar phoneManager={phoneManager} sectionManager={sectionManager}/>
       <div className="main-content-container">
         {/* <TopNavbar /> */}
-        {/* <AppBody phoneManager={phoneManager}/> */}
+        {bodyContent}
       </div>
   </div>;
   return html;
