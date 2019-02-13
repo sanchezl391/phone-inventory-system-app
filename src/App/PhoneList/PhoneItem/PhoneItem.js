@@ -6,7 +6,6 @@ import PhoneDialog from './PhoneDialog/PhoneDialog';
 
 let PhoneItem = (props) => {
     let [isDialogOpen, setIsDialogOpen] = useState(false);
-    console.log(isDialogOpen);
     let phone = props.phone;
     let dialogJsx = (isDialogOpen) ? 
         <PhoneDialog 

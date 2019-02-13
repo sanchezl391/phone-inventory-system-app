@@ -28,15 +28,13 @@ let PhoneList = (props) => {
 
     let deletePhones = () => {
         for(let i in checkedPhoneIds) {
-            console.log('i', i);
             for(let id in phones) {
-                console.log('id', id);
                 if(id === checkedPhoneIds[i]) {
-                    let tmpPhones = phones;
+                    let tmpPhones = props.phoneManager.phones;
                     let tmpPhoneIds = checkedPhoneIds;
                     delete tmpPhoneIds[i];
                     delete tmpPhones[id];
-                    // setPhones(tmpPhones);
+                    props.phoneManager.setPhones(tmpPhones);
                 }
             }
         }
