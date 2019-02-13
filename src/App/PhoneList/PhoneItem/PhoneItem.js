@@ -37,7 +37,6 @@ let PhoneItem = (props) => {
             <PhoneDialog 
                 id={props.id}
                 phoneManager={props.phoneManager}
-                setBodyContent={props.setBodyContent} 
                 phone={props.phone}
             />
         ); 

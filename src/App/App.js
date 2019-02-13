@@ -13,7 +13,7 @@ let phone1 = {
   brand: 'LG',
   company: 'T-Mobile',
   color: 'black',
-  condition: 'A',
+  condition: '',
   comments: 'Some comments for phone.',
   dateAdded: '01/20/2018',
   datePurchased: '01/20/2018',
@@ -28,7 +28,7 @@ let phone1 = {
 let phone2 = {
   status: 'Sold',
   id: 2, 
-  model: 'Galaxy S9',
+  model: '',
   brand: 'Samsung',
   company: 'Verizon',
   color: 'white',
@@ -68,6 +68,7 @@ let phone3 = {
 
 let App = () => {
   let [phones, setPhones] = useState({1: phone1, 2: phone2, 3: phone3});
+  let phoneManager = {phones: phones, setPhones: setPhones};
   let [currentActiveSection, setCurrentActiveSection] = useState('inbox');
   let sectionManager = {currentActiveSection: currentActiveSection, setCurrentActiveSection:setCurrentActiveSection};
   console.log(currentActiveSection);
@@ -75,7 +76,7 @@ let App = () => {
     let content;
     switch(currentActiveSection){
       case 'inbox':
-        content = <Inbox/>;
+        content = <Inbox phoneManager={phoneManager}/>;
         break;
       case 'dashboard':
         content = <Dashboard/>;
@@ -89,8 +90,6 @@ let App = () => {
     }
     return content;
   })();
-
-  let phoneManager = {phones: phones, setPhones: setPhones};
 
   let html = <div className='app-container'>
       <SideNavbar phoneManager={phoneManager} sectionManager={sectionManager}/>

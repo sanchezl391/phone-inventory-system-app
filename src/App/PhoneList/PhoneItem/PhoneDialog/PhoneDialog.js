@@ -25,6 +25,7 @@ let phoneKeys = [
 let PhoneDialog = (props) => {
   let id;
   let phone = props.phone;
+  console.log(phone);
   let createNewPhone = () => {
     phone = {};
     for(let i in phoneKeys){
