@@ -72,10 +72,6 @@ let PhoneList = (props) => {
         <ul>
             {generatePhoneItemJsx()}
         </ul>
-        <PhoneDialog 
-            phone={phones[1]}
-            phoneManager={props.phoneManager}
-        />
     </div>;
     return html;
   };

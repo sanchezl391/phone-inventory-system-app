@@ -6,10 +6,12 @@
     position: relative;
     display: flex;
     flex: 1 1 50%;
+    align-items: center;
     border-left: 1px solid #DDDDDD;
     padding: .1em 1em;
 
     .value{
+        
         border-bottom: 1px dashed #0088CC;
         &:hover{
             cursor: pointer;

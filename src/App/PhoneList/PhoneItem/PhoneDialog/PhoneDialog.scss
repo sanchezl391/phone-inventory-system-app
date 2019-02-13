@@ -1,11 +1,25 @@
+.dialog-background{
+    z-index: 2;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.4);
+
+    .white-bg-color{background: white;}
+}
 .phone-dialog-container{
+    z-index: 2;
+    position: relative;
+    left: 5%;
+    width: 90%;
     display: flex;
     flex-direction: column;
-    flex: 1 1 100%;
 
     @mixin button{
         box-sizing: border-box;
-        padding: 0 0 1em 0;
+        padding: .5em;
         border-radius: 40%;
         &:hover{
             cursor:pointer;
@@ -20,11 +34,11 @@
         border-top-left-radius: 10px;
         border-top-right-radius: 10px;
         padding-left: 1em;
-        color:white;
     }
 }
 .phone-dialog-container > .form{
     padding: 1em;
+    background: white;
 }
 
 

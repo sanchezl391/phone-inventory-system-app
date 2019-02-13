@@ -54,6 +54,10 @@ let PhoneDialog = (props) => {
   
   if(props.isCreatingNewPhone) createNewPhone();
   
+  let handleBackBtnClicked = (e) => {
+    e.stopPropagation();
+    props.setIsDialogOpen(false);
+  };
 
   let generateJsx = () => {
     let jsx = [];
@@ -72,22 +76,22 @@ let PhoneDialog = (props) => {
     return jsx;
   };
 
-  let html = <div className="phone-dialog-container">
-    <i 
-      // onClick={() => props.setBodyContent(
-      //   <PhoneList 
-      //     setBodyContent={props.setBodyContent} 
-      //     phoneManager={props.phoneManager}
-      //   />
-      // )}
-      className="fas fa-arrow-left lg-txt"></i>
-    <div className="header">
-        <h2>{props.header}</h2>
-    </div>
-    <div className="form sm-txt">
-        {generateJsx()}
-    </div>
-  </div>;
+  let html = <div className="dialog-background">
+      <div className="phone-dialog-container">
+        <div className="header">
+            <h2>{props.header}</h2>
+        </div>
+        <div className="white-bg-color">
+          <i 
+            onClick={(e) => handleBackBtnClicked(e)}
+            className="fas fa-arrow-left lg-txt"></i>
+          <div className="form sm-txt">
+              {generateJsx()}
+          </div>
+        </div>
+      </div>
+    </div>;
+
   return html;
 };
 

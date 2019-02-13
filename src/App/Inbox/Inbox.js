@@ -31,11 +31,13 @@ let Inbox = (props) => {
       }
   };
   generateInboxPhones();
-  let html = <PhoneList 
-    phones={inboxPhones}
-    phoneManager={props.phoneManager}
-    inboxPhones={inboxPhones}
-  />;
+  let html = <div className="inbox-container">
+    <PhoneList 
+      phones={inboxPhones}
+      phoneManager={props.phoneManager}
+      inboxPhones={inboxPhones}
+    />
+  </div>;
 
   return html;    
 };

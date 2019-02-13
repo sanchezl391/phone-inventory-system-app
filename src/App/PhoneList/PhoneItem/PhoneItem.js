@@ -1,11 +1,18 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './PhoneItem.scss';
 import '../PhoneList.scss';
 import Checkbox from './Checkbox/Checkbox' ;
 import PhoneDialog from './PhoneDialog/PhoneDialog';
 
 let PhoneItem = (props) => {
+    let [isDialogOpen, setIsDialogOpen] = useState(false);
+    console.log(isDialogOpen);
     let phone = props.phone;
+    let dialogJsx = (isDialogOpen) ? 
+        <PhoneDialog 
+            setIsDialogOpen={setIsDialogOpen} 
+            phone={phone} 
+            phoneManager={props.phoneManager} /> : '';
     let missingCriticalCategoriesCount = 0;
     let getMissingCriticalCategoriesCount = () => {
         let criticalPhoneKeys = [
@@ -25,6 +32,11 @@ let PhoneItem = (props) => {
         }
     };
     
+    // let handlePhoneClick = (e) => {
+    //     e.stopPropagation();
+    //     setIsDialogOpen(true)
+    // };
+
     getMissingCriticalCategoriesCount();    
 
     let brand = phone.brand;
@@ -32,17 +44,7 @@ let PhoneItem = (props) => {
     let model = phone.model;
     let company = phone.company;
 
-    let handlePhoneItemClicked = () => {
-        props.setBodyContent(
-            <PhoneDialog 
-                id={props.id}
-                phoneManager={props.phoneManager}
-                phone={props.phone}
-            />
-        ); 
-    };
-
-    let html = <li onClick={() => handlePhoneItemClicked()} className='phone-item-container'>
+    let html = <li onClick={() => setIsDialogOpen(true)} className='phone-item-container'>
         <Checkbox id={props.id} notifyCheckChange={props.notifyCheckChange}/>
         <div className="phone-info-container">
             <div className="md-txt top-row">
@@ -53,9 +55,10 @@ let PhoneItem = (props) => {
                 <p className='sm-txt number almost-completed'>{missingCriticalCategoriesCount} Categories Left</p>
             </div>
         </div>
+        {dialogJsx}
     </li>;
     return html;
-  };
+};
   
 export default PhoneItem;
   
