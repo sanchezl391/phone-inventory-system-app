@@ -11,11 +11,10 @@ let Input = (props) => {
     let setPhones = props.phoneManager.setPhones;
 
     let phone = props.phone;
+    console.log(phone);
     phone[props.name] = value;
 
-    phones[props.id] = phone;
-    console.log(props.id);
-    console.log(phones);
+    phones[props.phone.id] = phone;
     setPhones(phones);
 
     props.setDisplayVal(value);

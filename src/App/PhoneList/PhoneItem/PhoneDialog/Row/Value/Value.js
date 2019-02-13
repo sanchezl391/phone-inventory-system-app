@@ -25,7 +25,7 @@ let Value = (props) => {
   let handleClick = () => {
     setInputJsx(
       <Input 
-        id={props.id}
+        id={props.phone.id}
         phoneManager={props.phoneManager}
         setDisplayVal={setDisplayVal} 
         displayVal={displayVal} 

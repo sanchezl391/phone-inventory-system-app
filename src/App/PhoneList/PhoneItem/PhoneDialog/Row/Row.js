@@ -7,8 +7,7 @@ let Row = (props) => {
         <p className='name'>{props.name}</p>
         {/* <div className="divider"></div> */}
         <Value 
-          phoneManager={props.phoneManager}
-          id={props.id} 
+          phoneManager={props.phoneManager} 
           name={props.name} 
           value={props.value}
           phone={props.phone} />       

@@ -69,7 +69,7 @@ let PhoneDialog = (props) => {
           key={key}
           name={key}
           value={phone[key]}
-          id={props.id || id}
+          id={props.phone.id || id}
         />
       );
     });
