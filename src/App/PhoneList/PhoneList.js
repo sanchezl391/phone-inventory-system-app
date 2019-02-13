@@ -5,15 +5,14 @@ import PhoneDialog from './PhoneItem/PhoneDialog/PhoneDialog'
 let PhoneList = (props) => {
     let phones = props.phones;
     let [checkedPhoneIds, setCheckedPhoneIds] = useState([]);
+    let [isDialogOpen, setIsDialogOpen] = useState(false);
 
-    // let handleAddPhoneBtnClicked = () => {
-    //     props.setBodyContent(
-    //         <PhoneDialog 
-    //             isCreatingNewPhone={true}
-    //             phoneManager={props.phoneManager}           
-    //     />
-    //     );
-    // };
+    let dialogJsx = (isDialogOpen) ? 
+        <PhoneDialog 
+            isCreatingNewPhone={true} 
+            phoneManager={props.phoneManager}
+            setIsDialogOpen={setIsDialogOpen}/>
+        : '' ;
 
     let notifyCheckChange = (isChecked, id) => {
         let copyOfPhoneIds = checkedPhoneIds.slice();
@@ -59,9 +58,10 @@ let PhoneList = (props) => {
     };
 
     let html = <div className="phone-list-container">
+        {dialogJsx}
         <div className="controls-container">
             <i 
-                // onClick={() => handleAddPhoneBtnClicked()}
+                onClick={() => setIsDialogOpen(true)}
                 className="far fa-edit"></i>
             <i 
                 onClick={ () => deletePhones() } 

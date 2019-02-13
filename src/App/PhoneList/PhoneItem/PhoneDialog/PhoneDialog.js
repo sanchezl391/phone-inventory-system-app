@@ -23,11 +23,9 @@ let phoneKeys = [
 ];
 
 let PhoneDialog = (props) => {
-  let id;
-  let phone = props.phone;
-  console.log(phone);
+  console.log('rendering phone dialog');
   let createNewPhone = () => {
-    phone = {};
+    let phone = {};
     for(let i in phoneKeys){
       let key = phoneKeys[i];
       phone[key] = '';
@@ -46,16 +44,19 @@ let PhoneDialog = (props) => {
     let phoneManager = props.phoneManager;
     let phones = phoneManager.phones;
     let idCount = Object.keys(phones).length + 1;
-    id = idCount;  
-
-    phones[idCount] = phone;
-    phoneManager.setPhones(phones);
+    phone.id = idCount;  
+    return phone;
   };
-  
-  if(props.isCreatingNewPhone) createNewPhone();
+  let phone = props.phone || createNewPhone();
+  let id = phone.id;
+  console.log(phone);
   
   let handleBackBtnClicked = (e) => {
     e.stopPropagation();
+    // save current phone
+    let phones = props.phoneManager.phones;
+    phones[phone.id] = phone;
+    props.phoneManager.setPhones(phones);
     props.setIsDialogOpen(false);
   };
 
@@ -69,7 +70,7 @@ let PhoneDialog = (props) => {
           key={key}
           name={key}
           value={phone[key]}
-          id={props.phone.id || id}
+          id={id}
         />
       );
     });
