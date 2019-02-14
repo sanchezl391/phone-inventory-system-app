@@ -70,8 +70,10 @@ let App = () => {
   let [phones, setPhones] = useState({1: phone1, 2: phone2, 3: phone3});
   let phoneManager = {phones: phones, setPhones: setPhones};
   let [currentActiveSection, setCurrentActiveSection] = useState('inbox');
+  let [activeFilters, setActiveFilters] = useState({});
+  let filterManager = {activeFilters: activeFilters, setActiveFilters: setActiveFilters};
   let sectionManager = {currentActiveSection: currentActiveSection, setCurrentActiveSection:setCurrentActiveSection};
-  console.log(currentActiveSection);
+  console.log(activeFilters);
   let bodyContent = (() => {
     let content;
     switch(currentActiveSection){
@@ -82,7 +84,7 @@ let App = () => {
         content = <Dashboard/>;
         break;
       case 'all phones':
-        content = <AllPhones phoneManager={phoneManager}/>;
+        content = <AllPhones phoneManager={phoneManager} filterManager={filterManager}/>;
         break;
       default:
         content = <AllPhones/>;
@@ -92,7 +94,10 @@ let App = () => {
   })();
 
   let html = <div className='app-container'>
-      <SideNavbar phoneManager={phoneManager} sectionManager={sectionManager}/>
+      <SideNavbar 
+        phoneManager={phoneManager} 
+        filterManager={filterManager}
+        sectionManager={sectionManager}/>
       <div className="main-content-container">
         {/* <TopNavbar /> */}
         {bodyContent}

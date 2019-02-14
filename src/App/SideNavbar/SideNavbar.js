@@ -27,7 +27,7 @@ let SideNavbar = (props) => {
           onClick={()=>props.sectionManager.setCurrentActiveSection('all phones')}>
           <i className="fas fa-list-ul"></i>Show Phones
         </div>
-      <Filter/> 
+      <Filter filterManager={props.filterManager}/> 
     </div>
   </nav>;
   return html;    

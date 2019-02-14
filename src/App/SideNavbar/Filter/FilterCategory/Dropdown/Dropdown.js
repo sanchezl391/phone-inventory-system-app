@@ -4,7 +4,11 @@ import DropdownValue from './DropdownValue/DropdownValue'
 
 let Dropdown = (props) => {
     let dropValuesJSX = props.dropdownValues.map((value) => 
-        <DropdownValue key={String(value)} value={value}/>
+        <DropdownValue 
+            category={props.category} 
+            key={String(value)} 
+            value={value} 
+            filterManager={props.filterManager}/>
     );
 
     let dropdownClassName = (props.isOpen) ? 'dropdown visible-dropdown' : 'dropdown hidden-dropdown';

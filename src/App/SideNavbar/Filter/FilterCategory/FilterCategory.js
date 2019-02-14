@@ -20,7 +20,12 @@ let FilterCategory = (props) => {
             </div>
             <i className={dropdownIconClassName}></i>  
         </li>
-        <Dropdown isOpen={isOpen} dropdownValues={props.dropdownValues}/>
+        <Dropdown 
+            category={props.category}
+            filterManager={props.filterManager}
+            isOpen={isOpen} 
+            dropdownValues={props.dropdownValues}
+            />
     </div>;
     return html;    
 };
