@@ -5,6 +5,9 @@ import Filter from './Filter/Filter';
 import Pages from './Pages/Pages';
 
 let SideNavbar = (props) => {
+  let [menuOpen, setMenuOpen] = useState(false);
+  let sideNavbarClassName = (menuOpen) ? 'side-navbar-body open-menu' : 'side-navbar-body closed-menu';
+
   let showPhonesContainerClassName = 
     (props.sectionManager.currentActiveSection === 'all phones') ? 
       'show-phones-container active-section' : 'show-phones-container' ;
@@ -16,7 +19,10 @@ let SideNavbar = (props) => {
         <p>Briana Sanchez</p>
       </div>
     </header>
-    <div className="side-navbar-body">
+    <div className="menu-container">
+      <i onClick={() => setMenuOpen(!menuOpen)} className="lg-txt menu hide-desktop fas fa-bars"></i>
+    </div>  
+    <div className={sideNavbarClassName}>
       <div className="input-container">
         <input className='sm-txt' placeholder="Phone Search..." type="text"/>
       </div>

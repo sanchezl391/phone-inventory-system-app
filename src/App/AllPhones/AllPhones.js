@@ -17,37 +17,38 @@ let AllPhones = (props) => {
   //             remove phone from phone list
   //             break
 
-  let activeFilters = props.activeFilters;
-  let phones = props.phoneManager.phones;
-  let filteredPhones = {};
-  for(let id in props.phoneManager.phones){
-    let phone = phones[id];
-    filteredPhones[id] = phone;
-    console.log('phone being checked', phone);
-    console.log('adding phone to filteredPhones', filteredPhones);
-    
-    for(let category in activeFilters){
-      let filterValues = activeFilters[category];
-      console.log('filter values', filterValues);
-      let phoneValue = phone[category];
-      console.log('phone value', phoneValue);
-      let hasValue = filterValues.includes(phoneValue);
-      console.log('phone has value', hasValue);
-      if(!hasValue){
-        delete filteredPhones[id];
+
+  let getFilteredPhones = () => {
+    let activeFilters = props.activeFilters;
+    let phones = props.phoneManager.phones;
+    let filteredPhones = {};
+    for(let id in props.phoneManager.phones){
+      let phone = phones[id];
+      filteredPhones[id] = phone;
+      // console.log('phone being checked', phone);
+      // console.log('adding phone to filteredPhones', filteredPhones);
+      
+      for(let category in activeFilters){
+        let filterValues = activeFilters[category];
+        // console.log('filter values', filterValues);
+        let phoneValue = phone[category];
+        // console.log('phone value', phoneValue);
+        let hasValue = filterValues.includes(phoneValue);
+        // console.log('phone has value', hasValue);
+        if(!hasValue){
+          delete filteredPhones[id];
+        }
       }
-    }
-    if(Object.keys(activeFilters).length === 0)
-      delete filteredPhones[id];
-  }
-  console.log('filtered phones', filteredPhones);
+      if(Object.keys(activeFilters).length === 0)
+        delete filteredPhones[id];
+    }  
 
-
-
-  // returns phones without missing categories
-  let getFinishedPhones = () => {
     let completePhones = {};
-    let allPhones = props.phoneManager.phones;
+    let allPhones = (Object.keys(filteredPhones).length === 0) ? 
+      phones:
+      filteredPhones;
+    // console.log();
+    console.log(allPhones);
     let criticalPhoneKeys = [
       'status', 
       'condition',
@@ -69,14 +70,16 @@ let AllPhones = (props) => {
       }
       if(missingCriticalCategoriesCount == 0) completePhones[id] = phone;
     }
-
+  
     return completePhones;
   };
+
+
 
   let html = <div className="all-phones-container">
     <PhoneList 
       phoneManager={props.phoneManager} 
-      phones={getFinishedPhones()}
+      phones={getFilteredPhones()}
       />
   </div>;
   return html;    
