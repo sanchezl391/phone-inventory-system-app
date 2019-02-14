@@ -84,7 +84,7 @@ let App = () => {
         content = <Dashboard/>;
         break;
       case 'all phones':
-        content = <AllPhones phoneManager={phoneManager} filterManager={filterManager}/>;
+        content = <AllPhones activeFilters={activeFilters} phoneManager={phoneManager} filterManager={filterManager}/>;
         break;
       default:
         content = <AllPhones/>;

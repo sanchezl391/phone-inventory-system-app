@@ -14,15 +14,15 @@ let DropdownValue = (props) => {
         let filterValues = activeFilters[props.category];
         console.log(filterCategory);
 
-        if(filterCategory in activeFilters && filterValues.includes(props.value)){
-            activeFilters[filterCategory] = activeFilters[filterCategory].filter((value) => value != props.value);
-            console.log(activeFilters);
-            if(filterValues.length === 0) delete activeFilters[filterCategory];
-        } 
-        else {
-            if(!(filterCategory in activeFilters))
-                activeFilters[filterCategory] = [];   
+        if(filterCategory in activeFilters){
+            if(filterValues.includes(props.value)) // delete if it already contains value
+                activeFilters[filterCategory] = activeFilters[filterCategory].filter((value) => value != props.value);
+            if(activeFilters[filterCategory].length === 0) {
+                delete activeFilters[filterCategory];
+            }
                 
+        } else{
+            activeFilters[filterCategory] = [];
             activeFilters[filterCategory].push(props.value);
         }
         props.filterManager.setActiveFilters(activeFilters);

@@ -4,6 +4,39 @@ import PhoneList from '../PhoneList/PhoneList';
 
 let AllPhones = (props) => {
   
+  // have count of filter categories
+
+  // phone list
+  
+  // for every phone
+  //     add to phone list
+  //     for every filter category
+  //         get value at phone[filter]
+  //         check if phone does not have at least one of category   
+  //         if not then 
+  //             remove phone from phone list
+  //             break
+
+  let activeFilters = props.activeFilters;
+  let phones = props.phoneManager.phones;
+  let filteredPhones = {};
+  for(let id in props.phoneManager.phones){
+    let phone = phones[id];
+    filteredPhones[id] = phone;
+    
+    for(let category in activeFilters){
+      let filterValues = activeFilters[category];
+      let phoneValue = phone[category];
+      let hasValue = phoneValue in filterValues;
+      if(!hasValue){
+        delete filteredPhones[id];
+      }
+    }
+  }
+  console.log('filtered phones', filteredPhones);
+
+
+
   // returns phones without missing categories
   let getFinishedPhones = () => {
     let completePhones = {};
@@ -29,6 +62,7 @@ let AllPhones = (props) => {
       }
       if(missingCriticalCategoriesCount == 0) completePhones[id] = phone;
     }
+
     return completePhones;
   };
 

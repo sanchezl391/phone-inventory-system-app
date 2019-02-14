@@ -11,22 +11,22 @@ let Filter = (props) => {
     <ul className='navigation md-txt'>
       <FilterCategory 
         filterManager={props.filterManager}
-        category='Status' categoryIcon='fas fa-exclamation-circle'
+        category='status' categoryIcon='fas fa-exclamation-circle'
         dropdownValues={['Sold', 'Selling', 'Repair']}
       />
       <FilterCategory 
         filterManager={props.filterManager}
-        category='Company' categoryIcon='fas fa-building'
+        category='company' categoryIcon='fas fa-building'
         dropdownValues={['T-Mobile', 'Sprint', 'Verizon']}
       />
       <FilterCategory 
         filterManager={props.filterManager}
-        category='Condition' icon={condition}
+        category='condition' icon={condition}
         dropdownValues={['A', 'B', 'C']}
       />
       <FilterCategory 
         filterManager={props.filterManager}
-        category='Brand' icon={brand}
+        category='brand' icon={brand}
         dropdownValues={['Apple', 'LG', 'Samsung']}
       />
     </ul>
