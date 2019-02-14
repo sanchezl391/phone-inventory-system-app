@@ -18,29 +18,29 @@ let AllPhones = (props) => {
   //             break
 
   let activeFilters = props.activeFilters;
-  console.log(activeFilters);
   let phones = props.phoneManager.phones;
   let filteredPhones = {};
   for(let id in props.phoneManager.phones){
     let phone = phones[id];
     filteredPhones[id] = phone;
-    // console.log('phone being checked', phone);
-    // console.log('adding phone to filteredPhones', filteredPhones);
-    
+    console.log('phone being checked', phone);
+    console.log('adding phone to filteredPhones', filteredPhones);
     
     for(let category in activeFilters){
       let filterValues = activeFilters[category];
-      // console.log('filter values', filterValues);
+      console.log('filter values', filterValues);
       let phoneValue = phone[category];
-      // console.log('phone value', phoneValue);
+      console.log('phone value', phoneValue);
       let hasValue = filterValues.includes(phoneValue);
-      // console.log('phone has value', hasValue);
+      console.log('phone has value', hasValue);
       if(!hasValue){
         delete filteredPhones[id];
       }
     }
+    if(Object.keys(activeFilters).length === 0)
+      delete filteredPhones[id];
   }
-  // console.log('filtered phones', filteredPhones);
+  console.log('filtered phones', filteredPhones);
 
 
 
