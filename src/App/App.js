@@ -82,7 +82,7 @@ let App = () => {
         content = <Dashboard/>;
         break;
       case 'all phones':
-        content = <AllPhones/>;
+        content = <AllPhones phoneManager={phoneManager}/>;
         break;
       default:
         content = <AllPhones/>;

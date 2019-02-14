@@ -30,11 +30,6 @@ let PhoneItem = (props) => {
             if(isEmpty) missingCriticalCategoriesCount+=1;
         }
     };
-    
-    // let handlePhoneClick = (e) => {
-    //     e.stopPropagation();
-    //     setIsDialogOpen(true)
-    // };
 
     getMissingCriticalCategoriesCount();    
 
