@@ -14,7 +14,6 @@ let criticalPhoneKeys = [
 
 let Inbox = (props) => {
   let phones = props.phoneManager.phones; 
-  console.log('Phones Received from up top: ', phones);
   let inboxPhones = {};
   let generateInboxPhones = () => {
       for(let id in phones) {
@@ -32,7 +31,6 @@ let Inbox = (props) => {
       }
   };
   generateInboxPhones();
-  console.log('Inbox Phones: ', inboxPhones);
   let html = <div className="inbox-container">
     <PhoneList 
       phones={inboxPhones}

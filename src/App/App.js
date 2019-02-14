@@ -7,7 +7,7 @@ import Dashboard from './Dashboard/Dashboard';
 import AllPhones from './AllPhones/AllPhones';
 
 let phone1 = {
-  status: 'Sale',
+  status: 'Selling',
   id: 1, 
   model: 'V20',
   brand: 'LG',
