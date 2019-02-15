@@ -16,7 +16,7 @@ let DropdownValue = (props) => {
         if(filterCategory in activeFilters){
             console.log('category exists');
             if(filterValues.includes(props.value)) // delete if it already contains value
-                activeFilters[filterCategory] = activeFilters[filterCategory].filter((value) => value != props.value);
+                activeFilters[filterCategory] = activeFilters[filterCategory].filter((value) => value !== props.value);
             else
                 activeFilters[filterCategory].push(props.value);
             if(activeFilters[filterCategory].length === 0) {

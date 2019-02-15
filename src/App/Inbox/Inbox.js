@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import './Inbox.scss';
 import PhoneList from '../PhoneList/PhoneList';
 

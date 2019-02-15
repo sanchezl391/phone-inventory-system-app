@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
 import './App.scss';
 import SideNavbar from './SideNavbar/SideNavbar';
-import TopNavbar from './TopNavbar/TopNavbar';
 import Inbox from './Inbox/Inbox';
 import Dashboard from './Dashboard/Dashboard';
 import AllPhones from './AllPhones/AllPhones';

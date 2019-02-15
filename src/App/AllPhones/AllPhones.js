@@ -3,22 +3,7 @@ import './AllPhones.scss';
 import PhoneList from '../PhoneList/PhoneList';
 
 let AllPhones = (props) => {
-  
-  // have count of filter categories
-
-  // phone list
-  
-  // for every phone
-  //     add to phone list
-  //     for every filter category
-  //         get value at phone[filter]
-  //         check if phone does not have at least one of category   
-  //         if not then 
-  //             remove phone from phone list
-  //             break
-
-
-  let getFilteredPhones = () => {
+    let getFilteredPhones = () => {
     let activeFilters = props.activeFilters;
     let phones = props.phoneManager.phones;
     let filteredPhones = {};
@@ -68,7 +53,7 @@ let AllPhones = (props) => {
         let isEmpty = !((val + '').length > 0); 
         if(isEmpty) missingCriticalCategoriesCount+=1;
       }
-      if(missingCriticalCategoriesCount == 0) completePhones[id] = phone;
+      if(missingCriticalCategoriesCount === 0) completePhones[id] = phone;
     }
   
     return completePhones;
