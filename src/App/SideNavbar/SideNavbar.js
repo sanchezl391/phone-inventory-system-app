@@ -23,9 +23,6 @@ let SideNavbar = (props) => {
       <i onClick={() => setMenuOpen(!menuOpen)} className="lg-txt menu hide-desktop fas fa-bars"></i>
     </div>  
     <div className={sideNavbarClassName}>
-      <div className="input-container">
-        <input className='sm-txt' placeholder="Phone Search..." type="text"/>
-      </div>
       <Pages 
         phoneManager={props.phoneManager} 
         sectionManager={props.sectionManager}/>
