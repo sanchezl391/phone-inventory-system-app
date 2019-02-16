@@ -23,7 +23,7 @@ let phoneKeys = [
 ];
 
 let PhoneDialog = (props) => {
-  console.log('rendering phone dialog');
+  // console.log('rendering phone dialog');
   let createNewPhone = () => {
     let phone = {};
     for(let i in phoneKeys){
@@ -49,7 +49,7 @@ let PhoneDialog = (props) => {
   };
   let phone = props.phone || createNewPhone();
   let id = phone.id;
-  console.log(phone);
+  // console.log(phone);
   
   let handleBackBtnClicked = (e) => {
     e.stopPropagation();

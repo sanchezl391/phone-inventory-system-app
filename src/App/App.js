@@ -72,7 +72,7 @@ let App = () => {
   let [activeFilters, setActiveFilters] = useState({});
   let filterManager = {activeFilters: activeFilters, setActiveFilters: setActiveFilters};
   let sectionManager = {currentActiveSection: currentActiveSection, setCurrentActiveSection:setCurrentActiveSection};
-  console.log(activeFilters);
+  // console.log(activeFilters);
   let bodyContent = (() => {
     let content;
     switch(currentActiveSection){
@@ -80,7 +80,7 @@ let App = () => {
         content = <Inbox phoneManager={phoneManager}/>;
         break;
       case 'dashboard':
-        content = <Dashboard/>;
+        content = <Dashboard phoneManager={phoneManager}/>;
         break;
       case 'all phones':
         content = <AllPhones activeFilters={activeFilters} phoneManager={phoneManager} filterManager={filterManager}/>;
