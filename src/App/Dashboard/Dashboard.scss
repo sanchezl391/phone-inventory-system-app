@@ -1,0 +1,30 @@
+$gray-bg-color: #E9F0F5;
+$red-color: #ff6b6b;
+
+
+.dashboard-container{
+    background: $gray-bg-color; 
+    min-height: 100vh;
+    padding: 1em;
+    border-radius: 5px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+
+.sales-information-container{
+    flex-wrap: wrap;
+    display: flex;
+    align-items: flex-start;
+    .sales-info-component{
+        margin: .5em .5em .5em 0;
+        border-radius: 5px;
+        background: white;
+        padding: .5em;
+        display: flex;
+        flex-direction: column;
+        align-items:center;
+        p{margin: 0;}
+    }
+}
