@@ -24,7 +24,7 @@ let Input = (props) => {
   let html = <div className="input-container">
         <p>Enter {props.name}</p>
         <div className="row">
-            <input onChange={handleChange} value={value}/>
+            <input type={(props.isDate) ? 'date' : ''} onChange={handleChange} value={value}/>
             <i 
               onClick={() => handleSaveBtnClicked()}
               className="input-btn fas fa-check"></i>

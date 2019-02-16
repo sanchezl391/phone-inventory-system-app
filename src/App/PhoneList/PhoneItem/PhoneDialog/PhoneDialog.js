@@ -63,16 +63,30 @@ let PhoneDialog = (props) => {
   let generateJsx = () => {
     let jsx = [];
     phoneKeys.forEach((key) => {
-      jsx.push(
-        <Row
-          phone={phone}
-          phoneManager={props.phoneManager}
-          key={key}
-          name={key}
-          value={phone[key]}
-          id={id}
-        />
-      );
+      if(key === 'datePurchased' || key === 'dateSold'|| key === 'dateReturned' || key === 'dateAdded') 
+        jsx.push(
+          <Row
+            isDate={true}
+            phone={phone}
+            phoneManager={props.phoneManager}
+            key={key}
+            name={key}
+            value={phone[key]}
+            id={id}
+          />
+        );
+      else 
+        jsx.push(
+          <Row
+            phone={phone}
+            phoneManager={props.phoneManager}
+            key={key}
+            name={key}
+            value={phone[key]}
+            id={id}
+          />
+        );
+     
     });
     return jsx;
   };
