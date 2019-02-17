@@ -25,12 +25,6 @@ let Settings = (props) => {
         </div>
         <div className="mode-value-container">
             <div 
-                onClick={() => props.modeManager.setTimeMode('week')}
-                className={isModeActive('week')}></div>
-            <p>week</p>
-        </div>
-        <div className="mode-value-container">
-            <div 
                 onClick={() => props.modeManager.setTimeMode('month')}
                 className={isModeActive('month')}></div>
             <p>month</p>

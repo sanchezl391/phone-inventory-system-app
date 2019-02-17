@@ -5,7 +5,7 @@ let SalesInfo = (props) => {
     let soldPhonesCount = 0;
     let phonesOnSaleCount = 0;
     let revenueCount = 0;
-    let getMonthArr = (date) => {return date.split("-");};
+    let getDateArr = (date) => {return date.split("-");};
 
     let phones = props.phoneManager.phones;
     let mode = props.mode;
@@ -22,7 +22,7 @@ let SalesInfo = (props) => {
             console.log('has sold date');
             dateSold = phone.dateSold;
             console.log('date sold: ', dateSold);
-            let dateArr = getMonthArr(dateSold);
+            let dateArr = getDateArr(dateSold);
             let month = dateArr[1];
             let day = dateArr[2];
             let year = dateArr[0];

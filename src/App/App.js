@@ -62,11 +62,49 @@ let phone3 = {
   goalPrice: 150, 
   priceSold: 200
 };
+let phone4 = {
+  status: 'Sold',
+  id: 4, 
+  model: 'S9 Active',
+  brand: 'Apple',
+  company: 'T-Mobile',
+  color: 'pink',
+  condition: 'B',
+  comments: 'Some comments for phone.',
+  dateAdded: '2019-02-14',
+  datePurchased: '2019-01-14',
+  dateSold: '2019-01-14',
+  dateReturned: '2019-02-14',
+  customerName: 'Sarah',
+  imei: 123456789,
+  originalPrice: 100,
+  goalPrice: 150, 
+  priceSold: 200
+};
+let phone5 = {
+  status: 'Sold',
+  id: 5, 
+  model: 'S10',
+  brand: 'Blackberry',
+  company: 'Cricket',
+  color: 'pink',
+  condition: 'B',
+  comments: 'Some comments for phone.',
+  dateAdded: '2019-02-14',
+  datePurchased: '2019-02-14',
+  dateSold: '2019-04-14',
+  dateReturned: '2019-02-14',
+  customerName: 'Luis',
+  imei: 123456789,
+  originalPrice: 100,
+  goalPrice: 150, 
+  priceSold: 200
+};
 
  
 
 let App = () => {
-  let [phones, setPhones] = useState({1: phone1, 2: phone2, 3: phone3});
+  let [phones, setPhones] = useState({1: phone1, 2: phone2, 3: phone3, 4: phone4, 5: phone5});
   let phoneManager = {phones: phones, setPhones: setPhones};
   let [currentActiveSection, setCurrentActiveSection] = useState('inbox');
   let [activeFilters, setActiveFilters] = useState({});

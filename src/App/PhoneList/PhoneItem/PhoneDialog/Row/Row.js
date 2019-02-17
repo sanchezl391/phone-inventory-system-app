@@ -7,7 +7,7 @@ let Row = (props) => {
         <p className='name'>{props.name}</p>
         {/* <div className="divider"></div> */}
         <Value 
-          isDate={(props.isDate) ? true : false}
+          type={props.type}
           phoneManager={props.phoneManager} 
           name={props.name} 
           value={props.value}
